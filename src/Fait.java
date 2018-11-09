@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Fait {
 
     private String _attribut = new String();
@@ -49,4 +51,11 @@ public class Fait {
                 ", _operateur='" + _operateur + '\'' +
                 '}';
     }
+
+    public boolean equals(Fait f) {
+                return (_attribut.equalsIgnoreCase(f.get_attribut()) &&
+                        _operateur.equalsIgnoreCase(f.get_operateur()) &&
+                        _valeur.equalsIgnoreCase(f.get_valeur()));
+    }
+
 }
