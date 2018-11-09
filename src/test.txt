@@ -1,0 +1,3 @@
+IF film=Shining THEN realisateur=  Stanley_Kubrick
+IF film=Shining THEN genre=horror
+IF age<18 THEN genre!=horror
