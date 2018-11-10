@@ -34,7 +34,6 @@ public class Regle {
     public boolean estPossible(ArrayList<Fait> base_de_faits) {
         boolean possible = true;
         for (Fait f : _conditions) {
-
             if (!base_de_faits.contains(f)) {
                 possible = false;
                 break;

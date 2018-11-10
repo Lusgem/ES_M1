@@ -24,19 +24,17 @@ public class BasedeRegles {
                     String []condition = conditions.split("AND");
                     for(String cdt : condition){
                         Fait tempCondition = new Fait();
-                        cdt=cdt.replaceAll(" ", ""); //Suppression des espaces génants
+
                         Matcher match = p.matcher(cdt);
                         if(match.find()){
                             tempCondition.set_attribut(match.group(1));
                             tempCondition.set_operateur(match.group(2));
                             tempCondition.set_valeur(match.group(3));
                             r.ajoutCondition(tempCondition);
-                            //System.out.println(tempCondition.toString());
                         }
 
                     }
                     Fait tempConclusion = new Fait();
-                    conclusion=conclusion.replaceAll(" ", ""); //Suppression des espaces génants
                     Matcher match = p.matcher(conclusion);
                     if(match.find()){
                         tempConclusion.set_attribut(match.group(1));
@@ -58,7 +56,6 @@ public class BasedeRegles {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
 
         return base_de_regles;
     }

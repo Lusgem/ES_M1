@@ -15,16 +15,16 @@ public class Fait {
         return _operateur;
     }
 
-    public void set_operateur(String _signe) {
-        this._operateur = _signe;
+    public void set_operateur(String _operateur) {
+        this._operateur = _operateur.replaceAll(" ", "");
     }
 
 
 
     public Fait(String _attribut, String _valeur, String _signe) {
-        this._attribut = _attribut;
-        this._valeur = _valeur;
-        this._operateur = _signe;
+        this._attribut = _attribut.replaceAll(" ", "");
+        this._valeur = _valeur.replaceAll(" ", "");
+        this._operateur = _signe.replaceAll(" ", "");
     }
 
     public String get_attribut() {
@@ -32,7 +32,7 @@ public class Fait {
     }
 
     public void set_attribut(String _attribut) {
-        this._attribut = _attribut;
+        this._attribut = _attribut.replaceAll(" ", "");
     }
 
     public String get_valeur() {
@@ -40,7 +40,7 @@ public class Fait {
     }
 
     public void set_valeur(String _valeur) {
-        this._valeur = _valeur;
+        this._valeur = _valeur.replaceAll(" ", "");
     }
 
     @Override
@@ -52,10 +52,19 @@ public class Fait {
                 '}';
     }
 
-    public boolean equals(Fait f) {
-                return (_attribut.equalsIgnoreCase(f.get_attribut()) &&
-                        _operateur.equalsIgnoreCase(f.get_operateur()) &&
-                        _valeur.equalsIgnoreCase(f.get_valeur()));
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Fait)) return false;
+        Fait fait = (Fait) o;
+        return Objects.equals(_attribut, fait.get_attribut()) &&
+                Objects.equals(_valeur, fait.get_valeur()) &&
+                Objects.equals(_operateur, fait.get_operateur());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(get_attribut(), get_valeur(), get_operateur());
+    }
 }
