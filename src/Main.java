@@ -9,6 +9,10 @@ public class Main {
         ArrayList<Fait> base_de_faits = new ArrayList<>();
         ArrayList<Regle> base_de_regles = BasedeRegles.Initialisation(fichier);
 
+        base_de_faits.add(new Fait("auteur","Stephen_King","="));
+        base_de_faits.add(new Fait("style","horreur","="));
+        Fait objectif = new Fait("livre","Ca","=");
+
 
 
 
@@ -30,7 +34,7 @@ public class Main {
         scan.close();
         switch(reponse){
             case 1:
-                //System.out.println(m.chainageAvant(objectif));
+                System.out.println(m.chainageAvant(objectif));
                 break;
             case 2:
                 //System.out.println(m.chainageArriere(objectif));

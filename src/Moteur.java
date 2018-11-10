@@ -14,7 +14,7 @@ public class Moteur {
         this._baseDeRegles = _baseDeRegles;
         this._baseDeFaits = _baseDeFaits;
     }
-    /*
+
     public String chainageAvant(Fait objectif){
         ArrayList<Regle> baseDeRegle = new ArrayList<Regle>(_baseDeRegles);
         ArrayList<Fait> baseDeFaits = new ArrayList<Fait>(_baseDeFaits);
@@ -55,6 +55,6 @@ public class Moteur {
         return false;
     }
 
-    */
+
 
 }

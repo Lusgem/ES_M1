@@ -4,10 +4,10 @@ import java.util.ArrayList;
  * Classe où sont définies les méthodes des différents moteurs (Chainage avant ou arrière)
  *
  */
- public class Moteurv2 {
+ public class Moteurv2 {/*
  public boolean chainageAvant (Fait F){
 	boolean verif; //true si les condtions sont dans la base de faits, false sinon 
-	ArrayList <int> reglesParcourues=new ArrayList<Regles>();
+	ArrayList <Regle> reglesParcourues=new ArrayList<>();
 	while (!this._baseDeFaits.contains(F)){
 		if (this._baseDeRegles.size()==reglesParcourues.size())return false;
 		for (Regle r : this._baseDeRegles){
@@ -59,6 +59,6 @@ import java.util.ArrayList;
     }
 
 
-
+*/
 
 }
