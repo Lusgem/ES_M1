@@ -5,13 +5,19 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String fichier = "src/test.txt";
+        String fichier = "regles.txt";
         ArrayList<Fait> base_de_faits = new ArrayList<>();
         ArrayList<Regle> base_de_regles = BasedeRegles.Initialisation(fichier);
 
-        base_de_faits.add(new Fait("auteur","Stephen_King","="));
+        System.out.println("Entrez votre age : ");
+        Scanner scan1 = new Scanner(System.in);
+        String age = scan1.next();
+
+        base_de_faits.add(new Fait("age",age,"="));
+        base_de_faits.add(new Fait("editeur","konami","="));
         base_de_faits.add(new Fait("style","horreur","="));
-        Fait objectif = new Fait("livre","Ca","=");
+        base_de_faits.add(new Fait("pegi","18","="));
+        Fait objectif = new Fait("jeu","Silent_Hill","=");
 
 
 

@@ -21,10 +21,10 @@ public class Fait {
 
 
 
-    public Fait(String _attribut, String _valeur, String _signe) {
+    public Fait(String _attribut, String _valeur, String _operateur) {
         this._attribut = _attribut.replaceAll(" ", "");
         this._valeur = _valeur.replaceAll(" ", "");
-        this._operateur = _signe.replaceAll(" ", "");
+        this._operateur = _operateur.replaceAll(" ", "");
     }
 
     public String get_attribut() {
@@ -40,7 +40,7 @@ public class Fait {
     }
 
     public void set_valeur(String _valeur) {
-        this._valeur = _valeur.replaceAll(" ", "");
+        this._valeur = _valeur;
     }
 
     @Override
@@ -58,9 +58,9 @@ public class Fait {
         if (this == o) return true;
         if (!(o instanceof Fait)) return false;
         Fait fait = (Fait) o;
-        return Objects.equals(_attribut, fait.get_attribut()) &&
-                Objects.equals(_valeur, fait.get_valeur()) &&
-                Objects.equals(_operateur, fait.get_operateur());
+        return fait.get_operateur().equalsIgnoreCase(_operateur) &&
+                fait.get_attribut().equalsIgnoreCase(_attribut) &&
+                fait.get_valeur().equalsIgnoreCase(_valeur);
     }
 
     @Override

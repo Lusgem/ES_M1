@@ -43,7 +43,6 @@ public class BasedeRegles {
                         r.set_conclusion(tempConclusion);
                         //System.out.println(tempConclusion.toString());
                     }
-                    System.out.println(r.toString());
                     base_de_regles.add(r);
                 }
             }

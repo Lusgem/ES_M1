@@ -1,0 +1,34 @@
+IF age>=18 THEN pegi=18
+IF age>=18 THEN pegi=16
+IF age>=18 THEN pegi=12
+IF age>=18 THEN pegi=7
+IF age>=18 THEN pegi=3
+IF age<18 AND age>=16 THEN pegi=16
+IF age<18 AND age>=16 THEN pegi=12
+IF age<18 AND age>=16 THEN pegi=7
+IF age<18 AND age>=16 THEN pegi=3
+IF age<12 AND age>=7 THEN pegi=7
+IF age<12 AND age>=7 THEN pegi=3
+IF age<7 AND age>=3 THEN pegi=3
+IF jeu=Silent_Hill THEN editeur=Konami
+IF jeu=Metal_Gear_Solid THEN editeur=Konami
+IF jeu=Mario THEN editeur=Nintendo
+IF jeu=The_Legend_Of_Zelda THEN editeur=Nintendo
+IF jeu=Dragon_Quest THEN editeur=Square_Enix
+IF jeu=Final_Fantasy THEN editeur=Square_Enix
+IF jeu=Tomb_Raider THEN editeur=Square_Enix
+IF jeu=Street_Fighter THEN editeur=Capcom
+IF jeu=Silent_Hill THEN style=Horreur
+IF jeu=Metal_Gear_Solid THEN style=infiltration
+IF jeu=Mario THEN style=plateforme
+IF jeu=The_Legend_of_zelda THEN style=aventure
+IF jeu=Dragon_quest THEN style=RPG
+IF jeu=Final_fantasy THEN style=RPG
+IF jeu=Tomb_Raider THEN style=action
+IF style=horreur AND pegi=18 AND editeur=Konami THEN jeu=Silent_Hill
+IF style=infiltration AND pegi=18 AND editeur=Konami THEN jeu=Metal_Gear_Solid
+IF style=plateforme AND pegi=3 AND editeur=Nintendo THEN jeu=Mario
+IF style=aventure AND peg=12 AND editeur=Nintendo THEN jeu=The_Legend_Of_Zelda
+IF style=RPG AND pegi=12 AND editeur=Square_Enix THEN jeu=Dragon_Quest
+IF style=RPG AND pegi=16 AND editeur=Square_Enix THEN jeu=Final_Fantasy
+IF style=action AND pegi=16 AND editeur=Square_Enix THEN jeu=Tomb_Raider

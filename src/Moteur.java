@@ -20,33 +20,33 @@ public class Moteur {
         ArrayList<Fait> baseDeFaits = new ArrayList<Fait>(_baseDeFaits);
         String trace = "";
 
-        while(!baseDeFaits.contains(objectif)&&existeRegleApplicable(baseDeRegle, baseDeFaits)){
-            Regle regleApplicable = null;
+        while(!baseDeFaits.contains(objectif)&&existeUneReglePossible(baseDeRegle, baseDeFaits)){
+            Regle reglePossible = null;
 
             for(Regle r : baseDeRegle){
                 if(r.estPossible(baseDeFaits)){
-                    regleApplicable = r;
-                    trace+=regleApplicable.toString()+" ======  ";
+                    reglePossible = r;
+                    trace+=reglePossible.toString()+"\n";
                     break;
                 }
 
             }
 
-            baseDeRegle.remove(regleApplicable);
-            baseDeFaits.add(regleApplicable.get_conclusion());
+            baseDeRegle.remove(reglePossible);
+            baseDeFaits.add(reglePossible.get_conclusion());
 
         }
 
         if(baseDeFaits.contains(objectif)){
-            trace+=" SUCCES";
+            trace+="SUCCES";
             return trace;
         }
 
-        trace+=" ECHEC";
+        trace+="ECHEC";
         return trace;
     }
 
-    public boolean existeRegleApplicable(ArrayList<Regle> bdr, ArrayList<Fait> bdf){
+    public boolean existeUneReglePossible(ArrayList<Regle> bdr, ArrayList<Fait> bdf){
         for(Regle r :bdr){
             if(r.estPossible(bdf)){
                 return true;
