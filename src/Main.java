@@ -15,7 +15,7 @@ public class Main {
 
         base_de_faits.add(new Fait("age",age,"="));
         base_de_faits.add(new Fait("editeur","konami","="));
-        base_de_faits.add(new Fait("style","horreur","="));
+        base_de_faits.add(new Fait("interet","peur","="));
         base_de_faits.add(new Fait("pegi","18","="));
         Fait objectif = new Fait("jeu","Silent_Hill","=");
 
@@ -43,7 +43,7 @@ public class Main {
                 System.out.println(m.chainageAvant(objectif));
                 break;
             case 2:
-                //System.out.println(m.chainageArriere(objectif));
+                System.out.println(m.chainageArriere(objectif));
                 break;
             case 3:
                 break;

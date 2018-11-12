@@ -45,11 +45,10 @@ public class Fait {
 
     @Override
     public String toString() {
-        return "Fait{" +
-                "_attribut='" + _attribut + '\'' +
-                ", _valeur='" + _valeur + '\'' +
-                ", _operateur='" + _operateur + '\'' +
-                '}';
+        return "Fait(" +
+                "Attribut='" + _attribut + '\'' +
+                ", Valeur='" + _valeur + '\'' +
+                ", Operateur='" + _operateur + '\''+')';
     }
 
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
  *
  */
  public class Moteurv2 {
-	 
+	 /*
 	private ArrayList<Regle> _baseDeRegles;
     private ArrayList<Fait> _baseDeFaits;
     
@@ -17,10 +17,10 @@ import java.util.ArrayList;
 		reglesApplicables.clear();
 		for (Regle r : this._baseDeRegles)
 			if (!reglesParcourues.contains(this._baseDeRegles.indexOf(r)))
-				if r.estPossible(this._baseDeFaits)
+				if (r.estPossible(this._baseDeFaits))
 					reglesApplicables.add(r);
 		if (!reglesApplicables.isEmpty()){
-			_baseDeFaits.add(reglesApplicables.get(0)._conclusion);
+			_baseDeFaits.add(reglesApplicables.get(0).get_conclusion());
 		}
 		else{
 			while (!reglesParcourues.isEmpty()){
@@ -63,6 +63,6 @@ import java.util.ArrayList;
     }
 
 
-
+*/
 
 }
