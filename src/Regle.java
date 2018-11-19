@@ -42,8 +42,16 @@ public class Regle {
 
     public boolean estPossible(ArrayList<Fait> base_de_faits) {
         boolean possible = true;
+        ArrayList<Fait> bdf=new ArrayList<>(base_de_faits);
         for (Fait f : _conditions) {
-            if (!base_de_faits.contains(f)) {
+            for(Fait actuel : base_de_faits){
+                if(f.verificationNum(actuel)){
+                    if(!bdf.contains(f))
+                    bdf.add(f);
+                }
+            }
+
+            if (!bdf.contains(f)) {
                 possible = false;
                 break;
             }

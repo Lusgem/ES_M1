@@ -32,30 +32,9 @@ public class Main {
         final ArrayList<Fait> base_de_faits = new ArrayList<>();
         ArrayList<Regle> base_de_regles = BasedeRegles.Initialisation(fichier);
 
-       /* System.out.println("Entrez votre age : ");
-        Scanner scan1 = new Scanner(System.in);
-        String age = scan1.next();
-
-        base_de_faits.add(new Fait("age",age,"="));
-        base_de_faits.add(new Fait("editeur","konami","="));
-        base_de_faits.add(new Fait("interet","peur","="));
-        base_de_faits.add(new Fait("pegi","18","="));*/
-
-
-
-
-
-        /*System.out.println("Entrez le nom d'un fichier (Si il ne se trouve pas à la racine, entrez son adresse relative ou absolue");
-        Scanner scan1 = new Scanner(System.in);
-        fichier = scan1.next();*/
-
 
 
         final Moteur m = new Moteur(base_de_regles,base_de_faits);
-
-        System.out.println("Exploration en chainage avant ou arriere ? ");
-        System.out.println("1: Chainage avant");
-        System.out.println("2: Chaine arrière");
         
         
         ihm.setTitle("Systeme Expert");
@@ -79,7 +58,7 @@ public class Main {
 		JTextArea tobjectif= new JTextArea("Objectif :");
 		JTextArea tav=new JTextArea ("");
 		JTextArea tarr=new JTextArea ("");
-		String[] ages = { "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18+"}; 
+		String[] ages = { "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"};
 		final JComboBox<String> jComboAge = new JComboBox<String>(ages);
 		jComboAge.setSelectedIndex(0);
 		jComboAge.setVisible(true);
@@ -214,27 +193,6 @@ public class Main {
 		gridpan.add(Affresult);
 		ihm.setVisible(true);
 		
-		
-		
-        /*Scanner scan = new Scanner(System.in);
-        int reponse = scan.nextInt();
-        System.out.println(reponse);
-        scan.close();
-        switch(reponse){
-            case 1:
-                System.out.println(m.chainageAvant(objectif));
-                break;
-            case 2:
-                System.out.println(m.chainageArriere(objectif));
-                break;
-            case 3:
-                break;
-            default:
-                System.out.println("Erreur");
-                break;
-        }*/
-
-
 
     }
 }

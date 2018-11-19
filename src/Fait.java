@@ -43,6 +43,32 @@ public class Fait {
         this._valeur = _valeur;
     }
 
+    public boolean verificationNum(Fait fait){
+        String operateur = get_operateur();
+        if(operateur.equalsIgnoreCase("="))
+            return false;
+        if(!fait.get_attribut().equalsIgnoreCase("age"))
+            return false;
+        int num = Integer.parseInt(get_valeur());
+        int numcourant = Integer.parseInt(fait.get_valeur());
+        if(get_attribut().equalsIgnoreCase(fait.get_attribut())){
+            switch (operateur){
+                case "<=":
+                    return numcourant<=num;
+                case ">=":
+                    return numcourant>=num;
+                case "=":
+                    return true;
+                case "<":
+                    return numcourant<num;
+                case ">":
+                    return numcourant>num;
+
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Fait(" +

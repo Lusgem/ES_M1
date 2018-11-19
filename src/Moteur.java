@@ -31,7 +31,6 @@ public class Moteur {
         System.out.println("Début du chainage avant !");
         while(!baseDeFaits.contains(objectif)&&existeUneReglePossible(baseDeRegle, baseDeFaits)){
             Regle reglePossible = null;
-
             for(Regle r : baseDeRegle){
                 if(r.estPossible(baseDeFaits)){
                     reglePossible = r;
@@ -60,6 +59,8 @@ public class Moteur {
 
         return "ECHEC";
     }
+
+
 
     public String chainageArriere(Fait objectif){
         ArrayList<Regle> baseDeRegle= new ArrayList<>(_baseDeRegles);
