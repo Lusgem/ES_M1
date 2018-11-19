@@ -18,6 +18,7 @@ public class Main {
 	static String age;
 	static String editeur;
 	static String pegi;
+	static String objectifjeu;
 	
     public static void main(String[] args) {
     	interet="";
@@ -37,7 +38,7 @@ public class Main {
         base_de_faits.add(new Fait("editeur","konami","="));
         base_de_faits.add(new Fait("interet","peur","="));
         base_de_faits.add(new Fait("pegi","18","="));*/
-        final Fait objectif = new Fait("jeu","Silent_Hill","=");
+        Fait objectif = new Fait("jeu","","=");
 
 
 
@@ -73,6 +74,7 @@ public class Main {
 		JTextArea tediteur=new JTextArea ("Editeur :");
 		JTextArea tinteret=new JTextArea ("Interet :");
 		JTextArea tpegi=new JTextArea ("Pegi :");
+		JTextArea tobjectif= new JTextArea("Objectif :");
 		JTextArea tav=new JTextArea ("");
 		JTextArea tarr=new JTextArea ("");
 		String[] ages = { "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18+"}; 
@@ -95,6 +97,20 @@ public class Main {
 		final JComboBox<String> jComboPegi = new JComboBox<String>(pegis);
 		jComboPegi.setSelectedIndex(0);
 		jComboPegi.setVisible(true);
+
+
+		ArrayList<String> jeux= new ArrayList<>();
+		for (Regle r : base_de_regles){
+		    if(r.get_conclusion().get_attribut().equalsIgnoreCase("jeu") && !jeux.contains(r.get_conclusion().get_valeur())){
+		        jeux.add(r.get_conclusion().get_valeur());
+            }
+        }
+        String[] jeuxbox = jeux.toArray(new String[jeux.size()]);
+        final JComboBox<String> jComboObjectif = new JComboBox<String>(jeuxbox);
+        jComboObjectif.setSelectedIndex(0);
+        jComboObjectif.setVisible(true);
+        System.out.println(jeux.toString());
+
 		
 		JButton chAv=new JButton("Chainage Avant");
 		JButton chAr=new JButton("Chainage Arrière");
@@ -137,6 +153,13 @@ public class Main {
 			}
 			
 		});
+		jComboObjectif.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                objectifjeu = (String) jComboObjectif.getSelectedItem();
+                objectif.set_valeur(objectifjeu);
+            }
+        });
 		chAv.addActionListener(new ActionListener(){
 
 			@Override
@@ -172,12 +195,14 @@ public class Main {
 		grid2pan.add(tediteur);
 		grid2pan.add(tinteret);
 		grid2pan.add(tpegi);
+		grid2pan.add(tobjectif);
 		grid2pan.add(tav);
 		grid2pan.add(tarr);
 		grid2pan.add(jComboAge);
 		grid2pan.add(jComboEdit);
 		grid2pan.add(jComboInteret);
 		grid2pan.add(jComboPegi);
+		grid2pan.add(jComboObjectif);
 		grid2pan.add(chAv);
 		grid2pan.add(chAr);
 		gridpan.add(Affresult);
