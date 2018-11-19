@@ -10,8 +10,11 @@ IF age<18 AND age>=16 THEN pegi=3
 IF age<12 AND age>=7 THEN pegi=7
 IF age<12 AND age>=7 THEN pegi=3
 IF age<7 AND age>=3 THEN pegi=3
+IF age=18+ THEN interet=angoisse
 IF interet=peur THEN style=horreur
 IF interet=angoisse THEN style=horreur
+IF style=horreur THEN pegi=18
+IF style=plateforme THEN pegi=3
 IF interet=challenge THEN style=plateforme
 IF jeu=Silent_Hill THEN editeur=Konami
 IF jeu=Metal_Gear_Solid THEN editeur=Konami
