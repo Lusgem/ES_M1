@@ -26,7 +26,7 @@ public class Main {
     	editeur="";
     	pegi="";
     	age="1";
-    	objectifjeu="Silent_Hill";
+    	objectifjeu=" ";
     	
         String fichier = "regles.txt";
         final ArrayList<Fait> base_de_faits = new ArrayList<>();
@@ -102,6 +102,7 @@ public class Main {
 
 
 		ArrayList<String> jeux= new ArrayList<>();
+		jeux.add("");
 		for (Regle r : base_de_regles){
 		    if(r.get_conclusion().get_attribut().equalsIgnoreCase("jeu") && !jeux.contains(r.get_conclusion().get_valeur())){
 		        jeux.add(r.get_conclusion().get_valeur());
@@ -111,7 +112,6 @@ public class Main {
         final JComboBox<String> jComboObjectif = new JComboBox<String>(jeuxbox);
         jComboObjectif.setSelectedIndex(0);
         jComboObjectif.setVisible(true);
-        System.out.println(jeux.toString());
 
 		
 		JButton chAv=new JButton("Chainage Avant");
@@ -170,11 +170,11 @@ public class Main {
 				// TODO Auto-generated method stub
 				objectif = new Fait("jeu",objectifjeu,"=");
 				base_de_faits.add(new Fait("age",age,"="));
-				if (editeur!="")base_de_faits.add(new Fait("editeur",editeur,"="));
-				if (interet!="")base_de_faits.add(new Fait("interet",interet,"="));
-				if (pegi!="")base_de_faits.add(new Fait("pegi",pegi,"="));
+				if (editeur!=""&& !base_de_faits.contains(new Fait("editeur",editeur,"=")))base_de_faits.add(new Fait("editeur",editeur,"="));
+				if (interet!=""&& !base_de_faits.contains(new Fait("interet",interet,"=")))base_de_faits.add(new Fait("interet",interet,"="));
+				if (pegi!=""&& !base_de_faits.contains(new Fait("pegi",pegi,"=")))base_de_faits.add(new Fait("pegi",pegi,"="));
 
-				Affresult.setText(objectif.toString()+m.chainageAvant(objectif));
+				Affresult.setText("Objectif : "+objectif.toString()+"\nRésultat : "+m.chainageAvant(objectif));
 			}
 			
 		});
@@ -189,7 +189,7 @@ public class Main {
 				if (interet!="")base_de_faits.add(new Fait("interet",interet,"="));
 				if (pegi!="")base_de_faits.add(new Fait("pegi",pegi,"="));
 				
-				Affresult.setText(objectif.toString()+m.chainageArriere(objectif));
+				Affresult.setText("Objectif : "+objectif.toString()+"\nRésultat : "+m.chainageArriere(objectif));
 			}
 			
 		});
