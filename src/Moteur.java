@@ -30,6 +30,7 @@ public class Moteur {
         Fait reponse = new Fait();
         System.out.println("Début du chainage avant !");
         while(!baseDeFaits.contains(objectif)&&existeUneReglePossible(baseDeRegle, baseDeFaits)){
+            System.out.println("Base de faits : \n"+baseDeFaits.toString());
             Regle reglePossible = null;
             for(Regle r : baseDeRegle){
                 if(r.estPossible(baseDeFaits)){
@@ -72,6 +73,7 @@ public class Moteur {
         System.out.println("Début du chainage arriere !");
         int tour = 1;
         while(!baseDeFaits.contains(objectif)&&tour<100000){
+            System.out.println("Base de faits : \n"+baseDeFaits.toString());
             ArrayList<Regle> reglesValides = new ArrayList<>();
             System.out.println("Base de faits, tour "+tour);
             for(Fait f : baseDeFaits){

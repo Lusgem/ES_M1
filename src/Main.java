@@ -148,6 +148,7 @@ public class Main {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				objectif = new Fait("jeu",objectifjeu,"=");
+				Affresult.setText("");
 				base_de_faits.add(new Fait("age",age,"="));
 				if (editeur!=""&& !base_de_faits.contains(new Fait("editeur",editeur,"=")))base_de_faits.add(new Fait("editeur",editeur,"="));
 				if (interet!=""&& !base_de_faits.contains(new Fait("interet",interet,"=")))base_de_faits.add(new Fait("interet",interet,"="));
@@ -163,6 +164,7 @@ public class Main {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				objectif = new Fait("jeu",objectifjeu,"=");
+				Affresult.setText("");
 				base_de_faits.add(new Fait("age",age,"="));
 				if (editeur!=""&& !base_de_faits.contains(new Fait("editeur",editeur,"=")))base_de_faits.add(new Fait("editeur",editeur,"="));
 				if (interet!=""&& !base_de_faits.contains(new Fait("interet",interet,"=")))base_de_faits.add(new Fait("interet",interet,"="));
