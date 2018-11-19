@@ -19,12 +19,14 @@ public class Main {
 	static String editeur;
 	static String pegi;
 	static String objectifjeu;
+	static Fait objectif;
 	
     public static void main(String[] args) {
     	interet="";
     	editeur="";
     	pegi="";
     	age="1";
+    	objectifjeu="Silent_Hill";
     	
         String fichier = "regles.txt";
         final ArrayList<Fait> base_de_faits = new ArrayList<>();
@@ -38,7 +40,7 @@ public class Main {
         base_de_faits.add(new Fait("editeur","konami","="));
         base_de_faits.add(new Fait("interet","peur","="));
         base_de_faits.add(new Fait("pegi","18","="));*/
-        Fait objectif = new Fait("jeu","","=");
+
 
 
 
@@ -157,7 +159,8 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 objectifjeu = (String) jComboObjectif.getSelectedItem();
-                objectif.set_valeur(objectifjeu);
+                System.out.println(objectifjeu);
+
             }
         });
 		chAv.addActionListener(new ActionListener(){
@@ -165,25 +168,28 @@ public class Main {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				objectif = new Fait("jeu",objectifjeu,"=");
 				base_de_faits.add(new Fait("age",age,"="));
 				if (editeur!="")base_de_faits.add(new Fait("editeur",editeur,"="));
 				if (interet!="")base_de_faits.add(new Fait("interet",interet,"="));
 				if (pegi!="")base_de_faits.add(new Fait("pegi",pegi,"="));
-				Affresult.setText(m.chainageArriere(objectif));
+
+				Affresult.setText(objectif.toString()+m.chainageAvant(objectif));
 			}
 			
 		});
-		chAv.addActionListener(new ActionListener(){
+		chAr.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				objectif = new Fait("jeu",objectifjeu,"=");
 				base_de_faits.add(new Fait("age",age,"="));
 				if (editeur!="")base_de_faits.add(new Fait("editeur",editeur,"="));
 				if (interet!="")base_de_faits.add(new Fait("interet",interet,"="));
 				if (pegi!="")base_de_faits.add(new Fait("pegi",pegi,"="));
 				
-				Affresult.setText(m.chainageArriere(objectif));
+				Affresult.setText(objectif.toString()+m.chainageArriere(objectif));
 			}
 			
 		});
